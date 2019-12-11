@@ -61,10 +61,9 @@ class UI {
      this.expenseFeedback.innerHTML = `<p>Values cannot be empty or negative</p>`;
      const self = this;
      setTimeout(function(){
-      self.expenseFeedback.classList.remove('show item');
-     },4000)
-   }
-     else {
+      self.expenseFeedback.classList.remove('showItem');
+     },4000);
+   } else {
        let amount = parseInt(amountValue);
        this.expenseInput.value = '';
        this.amountInput.value = '';
@@ -72,7 +71,7 @@ class UI {
        let expense = {
          id: this.itemID,
          title: expenseValue,
-         amount: amountValue
+         amount: amount
        }
        this.itemID++;
        this.itemList.push(expense);
@@ -139,8 +138,8 @@ expenseForm.addEventListener('submit', function(event){
 });
 
 //expense click
-expenseList.addEventListener('click', function(){});
-
+ expenseList.addEventListener('click', function(event){});
+ console.log(event.target)
 
 }
 
